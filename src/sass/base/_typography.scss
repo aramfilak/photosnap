@@ -1,0 +1,56 @@
+@use "../abstracts" as *;
+
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+input {
+  font-family: inherit;
+}
+
+p {
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: rem(15);
+  line-height: rem(25);
+  color: var(--black);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 700;
+  color: var(--black);
+}
+h1 {
+  font-size: rem(40);
+  line-height: rem(48);
+  letter-spacing: rem(4.16);
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: rem(24);
+  line-height: rem(25);
+}
+h3 {
+  font-size: rem(18);
+  line-height: rem(25);
+}
+
+h4 {
+  font-size: rem(12);
+  line-height: rem(16);
+  letter-spacing: rem(2);
+}
