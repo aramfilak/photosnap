@@ -1,0 +1,11 @@
+.btn.primary {
+  text-transform: uppercase;
+  background-color: var(--black);
+  color: var(--white);
+}
+.btn.primary.dark {
+  background-color: var(--white);
+  color: var(--dark);
+}
+.btn.secondary {
+}
