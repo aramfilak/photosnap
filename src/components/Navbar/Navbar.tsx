@@ -1,26 +1,30 @@
-import "./Navbar.scss"
-import React, { useState } from "react"
-import { NavLink } from "react-router-dom"
-import logo from "../../assets/shared/desktop/logo.svg"
-import close from "../../assets/shared/mobile/close.svg"
-import menu from "../../assets/shared/mobile/menu.svg"
-import Button from "../Button/Button"
-import { useNavigate } from "react-router-dom"
+import "./Navbar.scss";
+import React, { useState } from "react";
+import logo from "../../assets/shared/desktop/logo.svg";
+import close from "../../assets/shared/mobile/close.svg";
+import menu from "../../assets/shared/mobile/menu.svg";
+import Button from "../Button/Button";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import classNames from "classnames";
 
 interface link {
-  name: string
-  href: string
+  name: string;
+  href: string;
 }
 
 const links: link[] = [
   { name: "stories", href: "./stories" },
   { name: "features", href: "./features" },
   { name: "pricing", href: "./pricing" },
-]
+];
 
 const Navbar: React.FC = (): JSX.Element => {
-  const [isClosed, setIsClosed] = useState<boolean>(true)
-  const navigate = useNavigate()
+  const [closed, setClosed] = useState<boolean>(true);
+  const navigate = useNavigate();
+
+  const className = classNames("navbar", {
+    closed,
+  });
 
   const renderedLinks = links.map((link) => (
     <li key={link.name}>
@@ -28,14 +32,16 @@ const Navbar: React.FC = (): JSX.Element => {
         {link.name}
       </NavLink>
     </li>
-  ))
+  ));
 
   return (
-    <nav className="nav-bar">
-      <div className="menu">
-        <img className="logo" src={logo} alt="Page logo" />
-        <button onClick={() => setIsClosed((prv) => !prv)}>
-          <img className="menu-icon" src={isClosed ? menu : close} alt="menu icon" />
+    <nav className={className}>
+      <div className="logo-and-toggle">
+        <Link to={"/"}>
+          <img className="logo" src={logo} alt="Page logo" />
+        </Link>
+        <button className="toggle-btn" onClick={() => setClosed((prv) => !prv)}>
+          <img className="menu-icon" src={closed ? menu : close} alt="menu icon" />
         </button>
       </div>
       <ul className="links">{renderedLinks}</ul>
@@ -43,7 +49,7 @@ const Navbar: React.FC = (): JSX.Element => {
         get an invite
       </Button>
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

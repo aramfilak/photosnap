@@ -1,13 +1,13 @@
-import React, { lazy, Suspense } from "react"
-import "./App.scss"
-import { Route, Routes } from "react-router-dom"
-import Navbar from "./components/Navbar/Navbar"
-import Home from "./pages/Home"
+import React, { lazy, Suspense } from "react";
+import "./App.scss";
+import { Route, Routes } from "react-router-dom";
+import Navbar from "./components/Navbar/Navbar";
+import Home from "./pages/Home";
 
 // lazy loading
-const Features = lazy(() => import("./pages/Features"))
-const Pricing = lazy(() => import("./pages/Pricing"))
-const Stories = lazy(() => import("./pages/Stories"))
+const Features = lazy(() => import("./pages/Features"));
+const Pricing = lazy(() => import("./pages/Pricing"));
+const Stories = lazy(() => import("./pages/Stories"));
 
 const App: React.FC = (): JSX.Element => {
   return (
@@ -25,7 +25,7 @@ const App: React.FC = (): JSX.Element => {
         </Routes>
       </Suspense>
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
