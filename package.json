@@ -10,6 +10,7 @@
     "@types/node": "^16.18.25",
     "@types/react": "^18.2.5",
     "@types/react-dom": "^18.2.3",
+    "blurhash": "^2.0.5",
     "classnames": "^2.3.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -42,5 +43,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/react-lazy-load-image-component": "^1.5.3"
   }
 }

@@ -2,7 +2,7 @@
 
 ![Design preview for the Photosnap Website coding challenge](./preview.jpg)
 
-### [🔗 Go Live ](https://photosnap-6qm0j7vbh-aramfilak.vercel.app)
+### [🔗 Go Live ](https://photosnap-five-mu.vercel.app/)
 
 ### [🔗 Challenge Link](https://www.frontendmentor.io/challenges/photosnap-multipage-website-nMDSrNmNW)
 

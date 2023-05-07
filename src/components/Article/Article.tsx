@@ -1,19 +1,22 @@
-import "./Article.scss"
-import React from "react"
+import "./Article.scss";
+import React from "react";
+import classNames from "classnames";
+import Button from "../Button/Button";
 
-interface ArticleProps {
-  src: string
-  alt: string
-  title: string
-  text: string
+export interface ArticleProps {
+  src: string;
+  alt: string;
+  title: string;
+  text: string;
   link?: {
-    href: string
-    text: string
-  }
-  dark?: boolean
-  light?: boolean
-  rightContent?: boolean
+    href: string;
+    text: string;
+  };
+  dark?: boolean;
+  light?: boolean;
+  rtl?: boolean;
 }
+
 const Article: React.FC<ArticleProps> = ({
   src,
   alt,
@@ -22,22 +25,36 @@ const Article: React.FC<ArticleProps> = ({
   link,
   title,
   text,
-  rightContent,
+  rtl,
 }): JSX.Element => {
   if (dark && light) {
-    throw Error("You can only pass either 'light' or 'dark', but not both at the same time.")
+    throw Error(
+      "You can only pass either 'light' or 'dark', but not both at the same time."
+    );
   }
-
+  const className = classNames("article", {
+    dark,
+    light,
+    rtl,
+  });
   return (
-    <article className={`block ${dark && "dark"} ${light && "light"} ${rightContent && "right"}`}>
-      <img src={src} alt={alt} />
+    <article className={className}>
+      <img src={src} alt={alt} loading="lazy" />
+
       <div className="content">
-        <h1 className="title">{title}</h1>
-        <p className="text">{text}</p>
-        {link && <a href={link.href}>{link.text}</a>}
+        <div className="wrapper">
+          <h1 className="title">{title}</h1>
+          <p className="text">{text}</p>
+          {link && (
+            <Button secondary dark={dark}>
+              {link.text}
+              <a href={link.href}> </a>
+            </Button>
+          )}
+        </div>
       </div>
     </article>
-  )
-}
+  );
+};
 
-export default Article
+export default Article;

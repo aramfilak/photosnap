@@ -2,7 +2,7 @@ import React, { lazy, Suspense } from "react";
 import "./App.scss";
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
-import Home from "./pages/Home";
+import Home from "./pages/Home/Home";
 
 // lazy loading
 const Features = lazy(() => import("./pages/Features"));
