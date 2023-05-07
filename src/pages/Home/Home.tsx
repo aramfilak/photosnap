@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Article from "../../components/Article/Article";
 import { articles } from "./data";
-import { log } from "console";
 
 const Home: React.FC = (): JSX.Element => {
   const [isDesktop, setIsDesktop] = useState(
