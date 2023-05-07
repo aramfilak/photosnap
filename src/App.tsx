@@ -5,9 +5,15 @@ import Navbar from "./components/Navbar/Navbar";
 import Home from "./pages/Home/Home";
 
 // lazy loading
-const Features = lazy(() => import("./pages/Features"));
-const Pricing = lazy(() => import("./pages/Pricing"));
-const Stories = lazy(() => import("./pages/Stories"));
+const Features: React.LazyExoticComponent<React.FC> = lazy(
+  () => import("./pages/Features")
+);
+const Pricing: React.LazyExoticComponent<React.FC> = lazy(
+  () => import("./pages/Pricing")
+);
+const Stories: React.LazyExoticComponent<React.FC> = lazy(
+  () => import("./pages/Stories")
+);
 
 const App: React.FC = (): JSX.Element => {
   return (

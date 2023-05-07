@@ -16,10 +16,12 @@
   &.primary {
     letter-spacing: rem(2);
     transition: all 0.3s ease-in-out;
+
     &.dark {
       background-color: var(--dark);
       color: var(--light);
     }
+
     &:hover {
       background-color: var(--light-gray);
       color: var(--black);
@@ -35,6 +37,7 @@
         stroke: var(--light);
       }
     }
+
     &:hover {
       text-decoration: underline;
     }

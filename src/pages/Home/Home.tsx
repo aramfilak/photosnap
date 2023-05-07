@@ -38,7 +38,6 @@ const Home: React.FC = (): JSX.Element => {
       title={article.title}
       text={article.text}
       dark={article.dark}
-      light={article.light}
       rtl={article.rtl}
       link={article.link}
     />
