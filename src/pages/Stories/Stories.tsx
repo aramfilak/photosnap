@@ -1,25 +1,12 @@
 import "./Stories.scss";
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { useGlobalContext } from "../../context";
 import { stories } from "./data";
 import Story from "../../components/Story/Story";
 import Article from "../../components/Article/Article";
-const Stories: React.FC = () => {
-  const [isMobile, setIsMobile] = useState<boolean>(
-    window.matchMedia("(max-width: 47.99em)").matches
-  );
 
-  //track the screen size,
-  //to change articles image based on screen size (mobile, tablet, desktop)
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.matchMedia("(max-width: 47.99em)").matches);
-    };
-    window.addEventListener("resize", handleResize);
-    //clean up
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+const Stories: React.FC = () => {
+  const { isMobile } = useGlobalContext()!;
 
   const renderedStories = stories.map((story, index) => (
     <Story

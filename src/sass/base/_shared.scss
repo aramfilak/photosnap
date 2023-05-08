@@ -17,6 +17,11 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  padding: rem(120) rem(60);
-  gap: rem(80);
+  padding-block: rem(120);
+  gap: rem(10);
+  padding-inline: rem(10);
+  @include mq(xl) {
+    gap: rem(80);
+    padding-inline: rem(160);
+  }
 }
