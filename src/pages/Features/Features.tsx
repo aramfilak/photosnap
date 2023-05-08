@@ -1,8 +1,9 @@
 import React from "react";
 import { useGlobalContext } from "../../context";
-import Feature from "../../components/Feature/Feature";
 import { features } from "./data";
+import Feature from "../../components/Feature/Feature";
 import Article from "../../components/Article/Article";
+import Beta from "../../components/Beta/Beta";
 import features_01_de from "../../assets/features/desktop/hero.jpg";
 import features_01_tb from "../../assets/features/tablet/hero.jpg";
 import features_01_mb from "../../assets/features/mobile/hero.jpg";
@@ -34,6 +35,7 @@ const Features: React.FC = () => {
         rtl
       />
       <section className="features">{renderedFeatures}</section>
+      <Beta />
     </div>
   );
 };
