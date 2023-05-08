@@ -15,7 +15,9 @@ import home_ar_06_de from "../../assets/stories/desktop/18-days-voyage.jpg";
 import home_ar_06_mb from "../../assets/stories/mobile/18-days-voyage.jpg";
 import home_ar_07_de from "../../assets/stories/desktop/architecturals.jpg";
 import home_ar_07_mb from "../../assets/stories/mobile/architecturals.jpg";
-
+import icon_01 from "../../assets/features/desktop/responsive.svg";
+import icon_02 from "../../assets/features/desktop/no-limit.svg";
+import icon_03 from "../../assets/features/desktop/embed.svg";
 interface Article {
   img: {
     src: { desktop?: string; tablet?: string; mobile?: string };
@@ -129,4 +131,34 @@ const stories: Story[] = [
     createdBy: "Samantha Brooke",
   },
 ];
-export { articles, stories };
+
+interface Feature {
+  icon: {
+    src: string;
+    alt: string;
+  };
+  title: string;
+  description: string;
+}
+
+const features: Feature[] = [
+  {
+    icon: { src: icon_01, alt: "Responsive Icon" },
+    title: "100% Responsive",
+    description:
+      "No matter which the device you’re on, our site is fully responsive and stories look beautiful on any screen.",
+  },
+  {
+    icon: { src: icon_02, alt: "No Limit Icon" },
+    title: "No Photo Upload Limit",
+    description:
+      "Our tool has no limits on uploads or bandwidth. Freely upload in bulk and share all of your stories in one go.",
+  },
+  {
+    icon: { src: icon_03, alt: "Available to Embed Icon" },
+    title: "Available to Embed",
+    description:
+      "Embed Tweets, Facebook posts, Instagram media, Vimeo or YouTube videos, Google Maps, and more. ",
+  },
+];
+export { articles, stories, features };

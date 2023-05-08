@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Article from "../../components/Article/Article";
-import { articles, stories } from "./data";
-import Story from "../../components/Storie/Story";
+import { articles, stories, features } from "./data";
+import Story from "../../components/Story/Story";
+import Feature from "../../components/Feature/Feature";
 
 const Home: React.FC = (): JSX.Element => {
   const [isDesktop, setIsDesktop] = useState<boolean>(
@@ -58,10 +59,23 @@ const Home: React.FC = (): JSX.Element => {
     />
   ));
 
+  const renderedFeatures = features.map((feature, index) => (
+    <Feature
+      key={index}
+      icon={{
+        src: feature.icon.src,
+        alt: feature.icon.alt,
+      }}
+      title={feature.title}
+      description={feature.description}
+    />
+  ));
+
   return (
     <div className="home">
       <section className="articles">{renderedArticles}</section>
       <section className="stories">{renderedStories}</section>
+      <section className="features">{renderedFeatures}</section>
     </div>
   );
 };
