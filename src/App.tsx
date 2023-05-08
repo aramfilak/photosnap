@@ -1,8 +1,9 @@
 import React, { lazy, Suspense } from "react";
 import "./App.scss";
 import { Route, Routes } from "react-router-dom";
-import Navbar from "./components/Navbar/Navbar";
 import Home from "./pages/Home/Home";
+import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
 
 // lazy loading
 const Features: React.LazyExoticComponent<React.FC> = lazy(() => import("./pages/Features"));
@@ -26,6 +27,7 @@ const App: React.FC = () => {
           </Routes>
         </Suspense>
       </div>
+      <Footer />
     </>
   );
 };

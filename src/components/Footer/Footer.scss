@@ -1,0 +1,129 @@
+@use "../../sass/abstracts/" as *;
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--dark);
+  padding-block: rem(56);
+  padding-inline: rem(32);
+
+  .logo {
+    margin-bottom: rem(32);
+    & > g > .text {
+      fill: var(--light);
+    }
+  }
+
+  .social-links {
+    display: flex;
+    gap: rem(13);
+    margin-bottom: rem(50);
+
+    li > a > svg > path {
+      fill: var(--light);
+    }
+    li:hover > a > .facebook-icon > path {
+      fill: url(#b);
+    }
+    li:hover > a > .youtube-icon > path {
+      fill: url(#c);
+    }
+    li:hover > a > .twitter-icon > path {
+      fill: url(#d);
+    }
+    li:hover > a > .pinterest-icon > path {
+      fill: url(#e);
+    }
+    li:hover > a > .instagram-icon > path {
+      fill: url(#f);
+    }
+  }
+  .links {
+    margin-top: rem(32);
+
+    text-align: center;
+    margin-bottom: rem(120);
+    .link {
+      display: inline-block;
+      font-weight: 700;
+      font-size: rem(12);
+      letter-spacing: rem(2);
+      text-transform: uppercase;
+      color: var(--light);
+      padding-block: rem(10);
+      width: 100%;
+      transition: all 0.3s;
+      &:hover {
+        opacity: 0.3;
+      }
+    }
+  }
+  .copyright {
+    font-weight: 400;
+    font-size: rem(15);
+    line-height: rem(20);
+    text-align: center;
+    color: var(--light);
+    opacity: 0.5;
+    margin-top: rem(34);
+  }
+
+  @include mq(md) {
+    position: relative;
+    height: rem(284);
+    .logo {
+      position: absolute;
+      left: rem(32);
+    }
+    .social-links {
+      position: absolute;
+      left: rem(32);
+      bottom: 0;
+    }
+    .links {
+      position: absolute;
+      left: rem(32);
+      display: flex;
+      gap: rem(26);
+    }
+
+    .btn {
+      position: absolute;
+      right: rem(32);
+    }
+    .copyright {
+      position: absolute;
+      right: rem(32);
+      bottom: rem(64);
+    }
+  }
+
+  @include mq(xl) {
+    height: rem(284);
+    .logo {
+      position: absolute;
+      left: rem(170);
+    }
+    .social-links {
+      position: absolute;
+      left: rem(170);
+      bottom: 0;
+    }
+    .links {
+      position: absolute;
+      left: rem(450);
+      top: rem(16);
+      display: block;
+    }
+
+    .btn {
+      position: absolute;
+      right: rem(170);
+    }
+    .copyright {
+      position: absolute;
+      right: rem(170);
+    }
+  }
+}

@@ -1,22 +1,12 @@
 import "./Navbar.scss";
 import React, { useState } from "react";
-import logo from "../../assets/shared/desktop/logo.svg";
+import { Logo } from "../../assets/Icons";
 import close from "../../assets/shared/mobile/close.svg";
 import menu from "../../assets/shared/mobile/menu.svg";
 import Button from "../Button/Button";
+import { links } from "../../data/shared_data";
 import { Link, NavLink } from "react-router-dom";
 import classNames from "classnames";
-
-interface link {
-  name: string;
-  href: string;
-}
-
-const links: link[] = [
-  { name: "stories", href: "./stories" },
-  { name: "features", href: "./features" },
-  { name: "pricing", href: "./pricing" },
-];
 
 const Navbar: React.FC = () => {
   const [closed, setClosed] = useState<boolean>(true);
@@ -37,7 +27,7 @@ const Navbar: React.FC = () => {
     <nav className={className}>
       <div className="logo-and-toggle">
         <Link to={"/"}>
-          <img className="logo" src={logo} alt="Page logo" />
+          <Logo />
         </Link>
         <button className="toggle-btn" onClick={() => setClosed((prv) => !prv)}>
           <img className="menu-icon" src={closed ? menu : close} alt="menu icon" />
@@ -45,7 +35,9 @@ const Navbar: React.FC = () => {
       </div>
       <ul className="links">{renderedLinks}</ul>
       <Button primary dark>
-        <a href={"/#"}>get an invite</a>
+        <a target="_blank" rel="noreferrer" href={"/#"}>
+          get an invite
+        </a>
       </Button>
     </nav>
   );

@@ -34,8 +34,9 @@ const Article: React.FC<ArticleProps> = ({ img, dark, link, title, text, rtl }):
           <p className="text">{text}</p>
           {link && (
             <Button secondary dark={dark}>
-              {link.text}
-              <a href={link.href}> </a>
+              <a target="_blank" rel="noreferrer" href={link.href}>
+                {link.text}
+              </a>
             </Button>
           )}
         </div>

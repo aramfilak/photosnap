@@ -16,6 +16,9 @@
   a {
     color: inherit;
     font-size: inherit;
+    line-height: inherit;
+    font-weight: inherit;
+    letter-spacing: rem(2);
   }
   &.primary {
     letter-spacing: rem(2);
