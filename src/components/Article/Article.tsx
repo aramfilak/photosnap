@@ -4,7 +4,7 @@ import classNames from "classnames";
 import Button from "../Button/Button";
 
 interface ArticleProps {
-  img: {
+  img?: {
     src: string;
     alt: string;
   };
@@ -26,7 +26,7 @@ const Article: React.FC<ArticleProps> = ({ img, dark, link, title, text, rtl }):
 
   return (
     <article className={className}>
-      <img src={img.src} alt={img.alt} loading="lazy" />
+      {img && <img src={img.src} alt={img.alt} loading="lazy" />}
 
       <div className="content">
         <div className="wrapper">

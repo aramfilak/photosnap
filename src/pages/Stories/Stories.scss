@@ -1,0 +1,33 @@
+@use "../../sass/abstracts/" as *;
+
+.stories-page {
+  .article {
+    background: url("../../assets/stories/mobile/moon-of-appalacia.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .btn {
+      background-color: transparent;
+    }
+
+    .content {
+      display: block;
+    }
+  }
+
+  @include mq(md) {
+    .article {
+      background: url("../../assets/stories/tablet/moon-of-appalacia.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+
+  @include mq(xl) {
+    .article {
+      background: url("../../assets/stories/desktop/moon-of-appalacia.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+}
