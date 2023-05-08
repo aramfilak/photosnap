@@ -30,9 +30,7 @@ describe("Button", () => {
           Click me
         </Button>
       );
-    }).toThrow(
-      "You can only pass either 'primary' or 'secondary', but not both at the same time."
-    );
+    }).toThrow("You can only pass either 'primary' or 'secondary', but not both at the same time.");
   });
 
   it("calls the onClick function when the button is clicked", () => {

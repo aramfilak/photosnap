@@ -1,0 +1,13 @@
+@use "../abstracts" as *;
+
+.stories {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @include mq(sm) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @include mq(md) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

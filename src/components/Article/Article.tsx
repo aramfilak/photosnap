@@ -4,8 +4,10 @@ import classNames from "classnames";
 import Button from "../Button/Button";
 
 interface ArticleProps {
-  src: string;
-  alt: string;
+  img: {
+    src: string;
+    alt: string;
+  };
   title: string;
   text: string;
   link?: {
@@ -16,15 +18,7 @@ interface ArticleProps {
   rtl?: boolean;
 }
 
-const Article: React.FC<ArticleProps> = ({
-  src,
-  alt,
-  dark,
-  link,
-  title,
-  text,
-  rtl,
-}): JSX.Element => {
+const Article: React.FC<ArticleProps> = ({ img, dark, link, title, text, rtl }): JSX.Element => {
   const className = classNames("article", {
     dark,
     rtl,
@@ -32,7 +26,7 @@ const Article: React.FC<ArticleProps> = ({
 
   return (
     <article className={className}>
-      <img src={src} alt={alt} loading="lazy" />
+      <img src={img.src} alt={img.alt} loading="lazy" />
 
       <div className="content">
         <div className="wrapper">

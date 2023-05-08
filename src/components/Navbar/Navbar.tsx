@@ -4,7 +4,7 @@ import logo from "../../assets/shared/desktop/logo.svg";
 import close from "../../assets/shared/mobile/close.svg";
 import menu from "../../assets/shared/mobile/menu.svg";
 import Button from "../Button/Button";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import classNames from "classnames";
 
 interface link {
@@ -18,9 +18,8 @@ const links: link[] = [
   { name: "pricing", href: "./pricing" },
 ];
 
-const Navbar: React.FC = (): JSX.Element => {
+const Navbar: React.FC = () => {
   const [closed, setClosed] = useState<boolean>(true);
-  const navigate = useNavigate();
 
   const className = classNames("navbar", {
     closed,
@@ -45,8 +44,8 @@ const Navbar: React.FC = (): JSX.Element => {
         </button>
       </div>
       <ul className="links">{renderedLinks}</ul>
-      <Button onClick={() => navigate("/pricing")} primary dark>
-        get an invite
+      <Button primary dark>
+        <a href={"/#"}>get an invite</a>
       </Button>
     </nav>
   );

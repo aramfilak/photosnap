@@ -5,31 +5,27 @@ import Navbar from "./components/Navbar/Navbar";
 import Home from "./pages/Home/Home";
 
 // lazy loading
-const Features: React.LazyExoticComponent<React.FC> = lazy(
-  () => import("./pages/Features")
-);
-const Pricing: React.LazyExoticComponent<React.FC> = lazy(
-  () => import("./pages/Pricing")
-);
-const Stories: React.LazyExoticComponent<React.FC> = lazy(
-  () => import("./pages/Stories")
-);
+const Features: React.LazyExoticComponent<React.FC> = lazy(() => import("./pages/Features"));
+const Pricing: React.LazyExoticComponent<React.FC> = lazy(() => import("./pages/Pricing"));
+const Stories: React.LazyExoticComponent<React.FC> = lazy(() => import("./pages/Stories"));
 
-const App: React.FC = (): JSX.Element => {
+const App: React.FC = () => {
   return (
     <>
       <Navbar />
-      <Suspense fallback={<div>Loading...</div>}>
-        <Routes>
-          <Route path={"/"}>
-            <Route index element={<Home />} />
-            <Route path="features" element={<Features />} />
-            <Route path="pricing" element={<Pricing />} />
-            <Route path="stories" element={<Stories />} />
-            <Route path="*" element={<div>No Page Found</div>} />
-          </Route>
-        </Routes>
-      </Suspense>
+      <div className="container">
+        <Suspense fallback={<div>Loading...</div>}>
+          <Routes>
+            <Route path={"/"}>
+              <Route index element={<Home />} />
+              <Route path="features" element={<Features />} />
+              <Route path="pricing" element={<Pricing />} />
+              <Route path="stories" element={<Stories />} />
+              <Route path="*" element={<div>No Page Found</div>} />
+            </Route>
+          </Routes>
+        </Suspense>
+      </div>
     </>
   );
 };

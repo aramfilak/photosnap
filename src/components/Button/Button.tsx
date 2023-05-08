@@ -9,13 +9,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   dark?: boolean;
 }
 
-const Button: React.FC<ButtonProps> = ({
-  primary,
-  secondary,
-  dark,
-  children,
-  ...rest
-}): JSX.Element => {
+const Button: React.FC<ButtonProps> = ({ primary, secondary, dark, children, ...rest }) => {
   if (primary && secondary) {
     throw Error(
       "You can only pass either 'primary' or 'secondary', but not both at the same time."

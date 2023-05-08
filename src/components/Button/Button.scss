@@ -13,6 +13,10 @@
   color: var(--dark);
   text-transform: uppercase;
 
+  a {
+    color: inherit;
+    font-size: inherit;
+  }
   &.primary {
     letter-spacing: rem(2);
     transition: all 0.3s ease-in-out;
