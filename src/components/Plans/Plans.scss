@@ -1,0 +1,163 @@
+@use "../../sass/abstracts/" as *;
+.plans {
+  padding-inline: rem(28);
+  padding-block: rem(64);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .plan-switcher {
+    display: flex;
+    justify-content: center;
+    gap: rem(32);
+    margin-bottom: rem(40);
+
+    .monthly,
+    .yearly {
+      font-weight: 700;
+      font-size: rem(18);
+      line-height: rem(25);
+      color: var(--dark);
+      opacity: 0.5;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .btn {
+      position: relative;
+      width: rem(64);
+      height: rem(32);
+      background-color: var(--light-gray);
+      border-radius: rem(14.5);
+
+      &::after {
+        content: "";
+        transition: all 0.3s ease-in-out;
+        position: absolute;
+        top: 50%;
+        left: 25%;
+        transform: translate(-50%, -50%);
+        width: rem(24);
+        height: rem(24);
+        background-color: var(--dark);
+        border-radius: 50%;
+      }
+    }
+
+    &.yearly {
+      .btn::after {
+        left: 75%;
+      }
+
+      .yearly {
+        opacity: 1;
+      }
+    }
+
+    &.monthly .monthly {
+      opacity: 1;
+    }
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: rem(24);
+
+    .plan {
+      width: rem(350);
+      text-align: center;
+      padding-block: rem(48);
+      padding-inline: rem(22);
+      background-color: var(--plan);
+      color: var(--dark);
+
+      &.recommended {
+        background-color: var(--dark);
+        color: var(--light);
+        position: relative;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: rem(6);
+          background: var(--main-accent);
+        }
+
+        .description,
+        .payment-type {
+          color: var(--light);
+        }
+      }
+
+      .name {
+        text-transform: capitalize;
+        margin-bottom: rem(18);
+      }
+
+      .description,
+      .payment-type {
+        font-weight: 400;
+        font-size: rem(15);
+        line-height: rem(25);
+        text-align: center;
+        color: var(--dark);
+        opacity: 0.6;
+        margin-bottom: rem(40);
+      }
+
+      .btn {
+        margin-top: rem(52);
+        width: 100%;
+      }
+    }
+  }
+
+  @media (min-width: 48em) and (max-width: 75em) {
+    align-items: unset;
+    .wrapper {
+      .plan {
+        min-width: 100%;
+        text-align: start;
+        position: relative;
+        .description {
+          max-width: rem(270);
+          text-align: start;
+        }
+
+        .btn {
+          width: rem(270);
+        }
+
+        .payment-type,
+        .price {
+          position: absolute;
+          right: rem(22);
+        }
+
+        .price {
+          top: rem(42);
+        }
+
+        .payment-type {
+          top: rem(90);
+        }
+      }
+    }
+  }
+
+  @include mq(xl) {
+    .wrapper {
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+      .recommended {
+        padding-block: rem(70);
+      }
+    }
+  }
+}

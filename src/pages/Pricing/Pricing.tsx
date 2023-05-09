@@ -2,10 +2,13 @@ import React from "react";
 import { useGlobalContext } from "../../context";
 import Beta from "../../components/Beta/Beta";
 import Article from "../../components/Article/Article";
+import Compare from "../../components/Compare/Compare";
+import Plans from "../../components/Plans/Plans";
+import { features, plans } from "./data";
 import pricing_01_de from "../../assets/pricing/desktop/hero.jpg";
 import pricing_01_tb from "../../assets/pricing/tablet/hero.jpg";
 import pricing_01_mb from "../../assets/pricing/mobile/hero.jpg";
-import Compare from "../../components/Compare/Compare";
+
 const Pricing: React.FC = () => {
   const { isMobile, isTablet } = useGlobalContext()!;
   return (
@@ -20,7 +23,8 @@ const Pricing: React.FC = () => {
         dark
         rtl
       />
-      <Compare />
+      <Plans plans={plans} />
+      <Compare features={features} />
       <Beta />
     </div>
   );
