@@ -1,0 +1,102 @@
+@use "../../sass/abstracts" as *;
+
+.compare {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-block: rem(160);
+  padding-inline: rem(28);
+  .title {
+    display: none;
+  }
+
+  .compare-table {
+    min-width: rem(320);
+    text-transform: uppercase;
+    thead tr > th {
+      font-weight: 700;
+      font-size: rem(12);
+      line-height: rem(16);
+      letter-spacing: rem(2);
+      color: var(--dark);
+      text-align: start;
+      padding-bottom: rem(23);
+      border-bottom: solid 1px var(--dark);
+      &:not(:first-child) {
+        display: none;
+      }
+    }
+
+    tbody > tr {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      height: rem(112);
+      border-bottom: 1px solid var(--light-gray);
+
+      td {
+        font-weight: 700;
+        line-height: rem(13);
+        letter-spacing: rem(1.67);
+      }
+      .plan {
+        opacity: 0.5;
+        font-size: rem(10);
+        display: flex;
+      }
+      .name {
+        font-size: rem(13);
+        position: absolute;
+        top: rem(15);
+      }
+    }
+  }
+
+  @include mq(md) {
+    flex-direction: column;
+    .title {
+      display: inline-block;
+      margin-bottom: rem(56);
+      font-weight: 700;
+      font-size: rem(40);
+      line-height: rem(48);
+      text-align: center;
+      letter-spacing: rem(4.1);
+      text-transform: uppercase;
+      color: var(--dark);
+    }
+
+    .compare-table {
+      max-width: rem(800);
+      thead tr {
+        display: grid;
+        grid-template-columns: 1fr repeat(3, 145px);
+
+        th {
+          text-align: center;
+          display: inline !important;
+        }
+      }
+      tbody > tr {
+        height: rem(63);
+        display: grid;
+        grid-template-columns: 1fr repeat(3, 145px);
+
+        td {
+          font-weight: 700;
+          line-height: rem(13);
+          letter-spacing: rem(1.67);
+          text-align: center;
+        }
+        .plan {
+          display: none;
+        }
+        .name {
+          position: static;
+          text-align: start;
+        }
+      }
+    }
+  }
+}
